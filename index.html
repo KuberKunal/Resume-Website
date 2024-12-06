@@ -7,17 +7,29 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#extra-curricular">Accolades</a></li>
+            <li><a href="#personal">Personal Info</a></li>
+        </ul>
+    </nav>
+
     <header>
         <h1>Kuber Kunal Dubey</h1>
         <p>Contact: +91-8341370928 | Email: <a href="mailto:kuberkunal099@gmail.com">kuberkunal099@gmail.com</a></p>
     </header>
 
-    <section>
+    <section id="about">
         <h2>About Me</h2>
         <p>As a student of BCA, I have a strong foundation in software development and programming. I am passionate about exploring and solving complex technical challenges. Enthusiastic software developer with a strong passion for technology and innovation. Adept at creating dynamic solutions and solving complex problems. Eager learner who thrives in hackathons and enjoys exploring new technological advancements. Dedicated volunteer and music enthusiast, committed to making a positive impact and continuously improving skills.</p>
     </section>
 
-    <section>
+    <section id="education">
         <h2>Education Background</h2>
         <ul>
             <li>10th Percentage: 72.40% - Sri Chaitanya School, Karnataka (CBSE)</li>
@@ -26,7 +38,7 @@
         </ul>
     </section>
 
-    <section>
+    <section id="skills">
         <h2>Technical Skills</h2>
         <ul>
             <li>Programming Languages: Python, C/C++, Java</li>
@@ -36,16 +48,7 @@
         </ul>
     </section>
 
-    <section>
-        <h2>Trainings & Certifications</h2>
-        <ul>
-            <li>Google Data Analytics Course on Coursera</li>
-            <li>Python Course from Infosys Springboard</li>
-            <li>Internship at ICFAI University</li>
-        </ul>
-    </section>
-
-    <section>
+    <section id="projects">
         <h2>Projects</h2>
         <h3>Banking Management System</h3>
         <p>
@@ -59,7 +62,7 @@
         </p>
     </section>
 
-    <section>
+    <section id="extra-curricular">
         <h2>Extra-Curricular Accolades</h2>
         <ul>
             <li>Many recognitions in the field of music (Piano).</li>
@@ -68,7 +71,7 @@
         </ul>
     </section>
 
-    <section>
+    <section id="personal">
         <h2>Personal Information</h2>
         <ul>
             <li><strong>Name:</strong> Kuber Kunal Dubey</li>
@@ -82,7 +85,30 @@
         <p>I hereby submit that all information is true and to the best of my knowledge and belief.</p>
         <p><strong>(Kuber Kunal Dubey)</strong></p>
     </footer>
-    <script src="script.js"></script>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" onclick="scrollToTop()">⬆ Back to Top</button>
+
+    <script>
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"
+                });
+            });
+        });
+
+        // Back to Top functionality
+        window.onscroll = () => {
+            const button = document.getElementById("backToTop");
+            button.style.display = window.scrollY > 300 ? "block" : "none";
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    </script>
 </body>
-    </html>
-    
+</html>
