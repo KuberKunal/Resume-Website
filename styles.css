@@ -1,5 +1,6 @@
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -7,28 +8,48 @@ body {
     color: #333;
 }
 
+a {
+    color: #0073e6;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header Styles */
 header {
-    background: #0073e6;
+    background: linear-gradient(45deg, #0073e6, #005bb5);
     color: #fff;
     text-align: center;
     padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 header h1 {
     margin: 0;
+    font-size: 2.5em;
 }
 
 header p {
     margin: 5px 0;
+    font-size: 1.2em;
 }
 
+/* Section Styles */
 section {
     background: #fff;
     margin: 20px auto;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 80%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 h2 {
@@ -36,10 +57,21 @@ h2 {
     border-bottom: 2px solid #0073e6;
     padding-bottom: 5px;
     margin-bottom: 10px;
+    font-size: 1.8em;
+}
+
+h3 {
+    color: #005bb5;
+    margin-top: 15px;
+    font-size: 1.5em;
+}
+
+p, ul {
+    font-size: 1.1em;
 }
 
 ul {
-    list-style: none;
+    list-style: square inside;
     padding: 0;
 }
 
@@ -47,12 +79,81 @@ ul li {
     margin-bottom: 10px;
 }
 
+/* Code and Highlighting */
+code {
+    background-color: #f4f4f4;
+    padding: 3px 5px;
+    border-radius: 3px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #c7254e;
+    font-size: 0.95em;
+}
+
+/* Footer Styles */
 footer {
     text-align: center;
-    padding: 10px 0;
-    background: #0073e6;
+    padding: 20px 0;
+    background: #005bb5;
     color: #fff;
     position: relative;
     bottom: 0;
     width: 100%;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    section {
+        width: 90%;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    p, ul {
+        font-size: 1em;
+    }
+
+    footer {
+        padding: 15px 0;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    section {
+        width: 95%;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    p, ul {
+        font-size: 0.95em;
+    }
+
+    footer {
+        font-size: 0.85em;
+    }
 }
