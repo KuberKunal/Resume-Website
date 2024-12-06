@@ -1,38 +1,42 @@
 /* General Styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f0f8ff;
     color: #333;
 }
 
 a {
     color: #0073e6;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 a:hover {
+    color: #005bb5;
     text-decoration: underline;
 }
 
 /* Header Styles */
 header {
-    background: linear-gradient(45deg, #0073e6, #005bb5);
+    background: linear-gradient(90deg, #005bb5, #0073e6);
     color: #fff;
     text-align: center;
-    padding: 20px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 40px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5em;
+    font-size: 3em;
+    font-weight: 700;
+    letter-spacing: 1.2px;
 }
 
 header p {
-    margin: 5px 0;
+    margin: 10px 0;
     font-size: 1.2em;
 }
 
@@ -40,53 +44,58 @@ header p {
 section {
     background: #fff;
     margin: 20px auto;
-    padding: 20px;
+    padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     width: 80%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 section:hover {
-    transform: scale(1.02);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 h2 {
     color: #0073e6;
-    border-bottom: 2px solid #0073e6;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
+    border-left: 6px solid #0073e6;
+    padding-left: 10px;
+    margin-bottom: 15px;
     font-size: 1.8em;
 }
 
 h3 {
     color: #005bb5;
-    margin-top: 15px;
+    margin-top: 20px;
     font-size: 1.5em;
+    font-weight: 600;
 }
 
 p, ul {
     font-size: 1.1em;
+    margin-bottom: 10px;
 }
 
 ul {
-    list-style: square inside;
-    padding: 0;
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 10px;
 }
 
 ul li {
     margin-bottom: 10px;
+    line-height: 1.5;
 }
 
-/* Code and Highlighting */
+/* Code Styling */
 code {
-    background-color: #f4f4f4;
-    padding: 3px 5px;
+    background-color: #eef4fc;
+    padding: 3px 6px;
     border-radius: 3px;
     font-family: 'Courier New', Courier, monospace;
     color: #c7254e;
     font-size: 0.95em;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 /* Footer Styles */
@@ -98,7 +107,7 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
 }
 
 footer p {
@@ -106,34 +115,66 @@ footer p {
     font-size: 1.1em;
 }
 
+/* Buttons */
+a.button {
+    display: inline-block;
+    background: #0073e6;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1em;
+    text-align: center;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+a.button:hover {
+    background: #005bb5;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 2em;
+        font-size: 2.5em;
     }
 
     section {
         width: 90%;
-        padding: 15px;
+        padding: 20px;
     }
 
     h2 {
-        font-size: 1.5em;
+        font-size: 1.6em;
     }
 
-    p, ul {
+    h3 {
+        font-size: 1.4em;
+    }
+
+    footer p {
         font-size: 1em;
-    }
-
-    footer {
-        padding: 15px 0;
-        font-size: 0.9em;
     }
 }
 
 @media (max-width: 480px) {
     header h1 {
-        font-size: 1.8em;
+        font-size: 2em;
     }
 
     header p {
@@ -142,18 +183,18 @@ footer p {
 
     section {
         width: 95%;
-        padding: 10px;
+        padding: 15px;
     }
 
     h2 {
-        font-size: 1.3em;
+        font-size: 1.4em;
     }
 
     p, ul {
-        font-size: 0.95em;
+        font-size: 1em;
     }
 
     footer {
-        font-size: 0.85em;
+        font-size: 0.9em;
     }
 }
