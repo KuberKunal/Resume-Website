@@ -90,26 +90,7 @@
     <!-- Back to Top Button -->
     <button id="backToTop" onclick="scrollToTop()">⬆ Back to Top</button>
 
-    <script>
-        // Smooth scrolling for internal links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener("click", function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute("href")).scrollIntoView({
-                    behavior: "smooth"
-                });
-            });
-        });
+   <script src="script.js"></script>
 
-        // Back to Top functionality
-        window.onscroll = () => {
-            const button = document.getElementById("backToTop");
-            button.style.display = window.scrollY > 300 ? "block" : "none";
-        };
-
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-    </script>
 </body>
 </html>
