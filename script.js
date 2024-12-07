@@ -1,29 +1,21 @@
-// Wait for the DOM to load
-document.addEventListener("DOMContentLoaded", () => {
-    // Smooth scrolling for internal links
-    const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
-    smoothScrollLinks.forEach(link => {
-        link.addEventListener("click", event => {
-            event.preventDefault();
-            const targetId = link.getAttribute("href").substring(1);
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: "smooth" });
-            }
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth"
         });
     });
+});
 
-    // Highlight active section in navigation
+// Highlight active section in navigation
+document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section");
-    const options = {
-        threshold: 0.6,
-    };
+    const options = { threshold: 0.6 };
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-            const navLink = document.querySelector(
-                `a[href="#${entry.target.id}"]`
-            );
+            const navLink = document.querySelector(`a[href="#${entry.target.id}"]`);
             if (entry.isIntersecting) {
                 navLink.classList.add("active");
             } else {
@@ -32,11 +24,21 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, options);
 
-    sections.forEach(section => {
-        observer.observe(section);
-    });
+    sections.forEach(section => observer.observe(section));
+});
 
-    // Back-to-top button
+// Back to Top functionality
+window.onscroll = () => {
+    const button = document.getElementById("backToTop");
+    button.style.display = window.scrollY > 300 ? "block" : "none";
+};
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Back-to-top button
+document.addEventListener("DOMContentLoaded", () => {
     const backToTopButton = document.createElement("button");
     backToTopButton.innerText = "⬆ Top";
     backToTopButton.id = "backToTop";
@@ -66,15 +68,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    backToTopButton.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+    backToTopButton.addEventListener("click", scrollToTop);
+});
 
-    // Animate sections on scroll
+// Animate sections on scroll
+document.addEventListener("DOMContentLoaded", () => {
     const animatedSections = document.querySelectorAll("section");
-    const sectionObserverOptions = {
-        threshold: 0.2,
-    };
+    const sectionObserverOptions = { threshold: 0.2 };
 
     const sectionObserver = new IntersectionObserver(entries => {
         entries.forEach(entry => {
