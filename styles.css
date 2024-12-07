@@ -29,29 +29,49 @@ header h1 {
     font-size: 2.5em;
 }
 
-/* Navigation Bar */
+/* Navigation Bar Styles */
+.navbar {
+    background-color: #0073e6; /* Background color for the navbar */
+    padding: 10px 0;          /* Top and bottom padding */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
 .navbar ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    background-color: #0073e6;
+    list-style-type: none;    /* Remove bullet points */
+    margin: 0;                /* Remove default margin */
+    padding: 0;               /* Remove default padding */
+    display: flex;            /* Display items in a row */
+    justify-content: center;  /* Center align the items horizontally */
 }
 
 .navbar li {
-    margin: 0 15px;
+    margin: 0 15px;           /* Add space between each list item */
 }
 
 .navbar a {
-    color: #fff;
-    padding: 10px;
-    display: block;
+    color: #fff;              /* Text color */
+    text-decoration: none;    /* Remove underline */
+    font-size: 1.1em;         /* Slightly increase font size */
+    font-weight: bold;        /* Make text bold */
+    transition: color 0.3s ease; /* Smooth transition for color changes */
 }
 
 .navbar a:hover {
-    background-color: #005bb5;
-    border-radius: 5px;
+    color: #ffdd57;           /* Highlight color on hover */
 }
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 600px) {
+    .navbar ul {
+        flex-direction: column;     /* Stack items vertically on small screens */
+        text-align: center;         /* Center-align text */
+    }
+
+    .navbar li {
+        margin: 10px 0;             /* Add vertical spacing between items */
+    }
+}
+
 
 /* Section Styles */
 section {
